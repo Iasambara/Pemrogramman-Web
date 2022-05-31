@@ -1,5 +1,5 @@
 <?php
-class berita extends ci_controller{
+class lulusan extends ci_controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model(array('admin/m_user'));
@@ -16,16 +16,16 @@ class berita extends ci_controller{
 //		$data['user']  		= $this->db->get_where('tbl_user', "username='$ceks'");
 		$data['user'] = $this->m_user->getUser();
 
-		$this->db->order_by('id_kat', 'DESC');
-		$data['v_kat']  = $this->db->query("select * from tbl_kat where nama_kat='berita' ORDER BY id_kat DESC")->result();
+//		$this->db->order_by('id_kat', 'DESC');
+		$data['lulusan']  = $this->db->query("select * from alumni_biodata ORDER BY nama ASC")->result();
 
-		$data['title'] 	= "Data Info BKK";
-		$data['file']='admin/berita/index';
+		$data['title'] 	= "Data Alumni";
+		$data['file']='admin/lulusan/index';
 		$this->load->view('admin/main',$data);
 	}
 	
-	function add_berita(){
-		if($this->input->post('judul_kat')){
+	function add_lulusan(){
+		if($this->input->post('nama')){
 		    $waktu = date("Y-m-d H:i:s");
 		    $posisi = strpos($this->input->post('judul_kat')," ");
 		    if (!$posisi)  
@@ -33,12 +33,11 @@ class berita extends ci_controller{
 		    else 
 		        $namafilefoto = substr($this->input->post('judul_kat'),0,$posisi);
 		    $akhiran_nama = date("dHis");
-			$config['upload_path']          = './assets/images/info/';
-			$config['allowed_types']        = 'jpg|png';
-			$config['max_size']             = '2048';
+			$config['upload_path'] = './assets/images/info/';
+			$config['allowed_types'] = 'jpg|png|jpeg';
+			$config['max_size'] = '2048000';
 			$config['file_name'] = $namafilefoto."_".$akhiran_nama;
-			$this->load->library('upload', $config);
-
+			$this->upload->initialize($config);
 			if(!$this->upload->do_upload('foto_kat')){
 				$message='Tidak Berhasil : '.$this->upload->display_errors();
 				$this->session->set_flashdata('alert', $message);
@@ -48,10 +47,11 @@ class berita extends ci_controller{
 					'ket_kat' => $this->input->post('isi_kat'),
 					'tgl_kat' => $waktu,
 				);
-				redirect('admin/berita');
+//				redirect('admin/berita');
 			}
 			else {
-			    $foto = $this->upload->data('file_name'); 
+				$file=$this->upload->data('foto_kat');
+				$foto = $file['file_name'];
     			$data=array(
 					'nama_kat' => "berita",
 					'judul_kat' => $this->input->post('judul_kat'),
@@ -63,11 +63,10 @@ class berita extends ci_controller{
 			$hasil=$this->db->insert('tbl_kat',$data);
 			$this->session->set_flashdata('alert', "Data berhasil ditambahkan.");
 			redirect('admin/berita');
-
 		}  
 		else{
-			$data['title'] = 'Tambah Data Info BKK';
-			$data['file']='admin/berita/berita_form';
+			$data['title'] = 'Tambah Data Alumni';
+			$data['file']='admin/lulusan/lulusan_form';
 			$this->load->view('admin/main',$data);
 		}
 	}
@@ -84,11 +83,10 @@ class berita extends ci_controller{
 		        $namafilefoto = substr($this->input->post('judul_kat'),0,$posisi);
 		    $akhiran_nama = date("dHis");
 			$config['upload_path'] = './assets/images/info/';
-			$config['allowed_types'] = 'jpg|png';
+			$config['allowed_types'] = 'jpg|png|jpeg';
 			$config['max_size'] = '2048000';
 			$config['file_name'] = $namafilefoto."_".$akhiran_nama;
-			$this->load->library('upload', $config);
-
+			$this->upload->initialize($config);
 			if(!$this->upload->do_upload('foto_kat')){
 				$message='Tidak Berhasil : '.$this->upload->display_errors();
 				$this->session->set_flashdata('alert', $message);
@@ -100,7 +98,8 @@ class berita extends ci_controller{
 				);
 			}
 			else{
-			    $foto = $this->upload->data('file_name'); 
+				$file=$this->upload->data('foto_kat');
+				$foto = $file['file_name'];
 			    $data=array(
 					'nama_kat' => "berita",
 					'judul_kat' => $this->input->post('judul_kat'),

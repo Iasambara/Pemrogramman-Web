@@ -66,7 +66,11 @@
 		<link href="<?php echo base_url();?>assets/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
 		<script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap/jquery.min.js"></script>
-		
+		<script>
+		$(document).ready(function () {
+			$('#example').DataTable();
+		});		
+		</script>
 </head>
 
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->

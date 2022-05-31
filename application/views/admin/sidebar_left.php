@@ -80,7 +80,12 @@
 							<i class="fa fa-circle-o <?php echo ($this->uri->segment(2) == 'siswa') ? 'text-aqua' : ''; ?>"></i> Data Alumni
 						</a>
 					</li>
-
+					
+					<li class="<?php echo ($this->uri->segment(2) == 'lulusan') ? 'active' : ''; ?>">
+						<a href="<?php echo site_url('admin/lulusan/index'); ?>">
+							<i class="fa fa-circle-o <?php echo ($this->uri->segment(2) == 'lulusan') ? 'text-aqua' : ''; ?>"></i> Edit Alumni
+						</a>
+					</li>
 					
 				</ul>
 			</li>

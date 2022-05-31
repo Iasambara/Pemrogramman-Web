@@ -8,7 +8,7 @@
 		<h3 class="box-title"><b><?php echo $title; ?></b></h3>
 </div>
 <div class="box-body">
-	<table class="table table-bordered table-striped">
+	<table class="table table-bordered table-striped" id="example">
 	<tr>
 		<th>No.</th><th>Nama</th><th>Tempat,tgl. Lahir</th><th>Alamat</th>
 	</tr>
