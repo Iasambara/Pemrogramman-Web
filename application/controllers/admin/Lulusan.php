@@ -18,7 +18,6 @@ class lulusan extends ci_controller{
 
 //		$this->db->order_by('id_kat', 'DESC');
 		$data['lulusan']  = $this->db->query("select * from alumni_biodata ORDER BY nama ASC")->result();
-
 		$data['title'] 	= "Data Alumni";
 		$data['file']='admin/lulusan/index';
 		$this->load->view('admin/main',$data);
@@ -83,6 +82,73 @@ class lulusan extends ci_controller{
 		}
 	}
 	
+
+	function edit_lulusan($id){
+		if($this->input->post('nama') != NULL){
+		    $id = $this->input->post('id');
+		    $nama = $this->input->post('nama');
+		    $tmplahir = $this->input->post('tempat_lahir');
+		    $tgllahir = $this->input->post('tgl_lahir');
+		    $jkel = $this->input->post('jkel');
+		    $email = $this->input->post('email');
+		    $alamat = $this->input->post('alamat');
+		    $fakultas = $this->input->post('fakultas');
+		    $akhiran_nama = date("dHi");
+		    $namafilefoto = substr($this->input->post('nama'),0,3); // gunakan 3 huruf pertama nama sbagai nama file foto
+			$config['upload_path'] = './assets/images/alumni/';
+			$config['allowed_types'] = 'jpg|png|jpeg';
+			$config['max_size'] = '2048000';
+			$config['file_name'] = $namafilefoto."_".$akhiran_nama;
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('fotoalumni')){
+				$message='Tidak Berhasil : '.$this->upload->display_errors();
+				$this->session->set_flashdata('alert', $message);
+    			$data=array(
+					'nama' => $nama,
+					'tempat_lahir' => $tmplahir,
+					'tgl_lahir' => $tgllahir,
+					'jenis_kelamin' => $jkel,
+					'email' => $email,
+					'alamat' => $alamat,
+					'id_fakultas' => $fakultas,
+				);
+			}
+			else{
+			    $foto = $this->upload->data('file_name'); 
+    			$data=array(
+					'nama' => $nama,
+					'tempat_lahir' => $tmplahir,
+					'tgl_lahir' => $tgllahir,
+					'jenis_kelamin' => $jkel,
+					'email' => $email,
+					'alamat' => $alamat,
+					'id_fakultas' => $fakultas,
+					'photo' => $foto,
+				);	
+		    }
+			//$hasil=$this->M_barang->ubah($data,$id);
+			$this->db->where(array('id_alumni'=>$this->input->post('id')));
+			$hasil=$this->db->update('alumni_biodata',$data);
+			$this->session->set_flashdata('alert', "Data berhasil diperbaharui.");
+			redirect('admin/lulusan');
+		}
+		else{
+			if($id != null){
+				$data['title'] = 'Edit Data Lulusan';
+				$cek = $this->db->get_where('alumni_biodata',array('id_alumni'=>$id));
+				if($cek->num_rows() > 0 ){
+					$data['lulusan'] = $cek->row();
+					$data['fakultas']=$this->db->query("select * from alumni_fakultas order by nama_fakultasy")->result();
+					$data['file']='admin/lulusan/lulusan_form';
+					$this->load->view('admin/main',$data);	
+				}
+				else{
+					redirect('admin/lulusan');
+				}
+			}
+			else redirect('admin/lulusan');
+		}
+	}
 
 	function edit_berita($id){
 		if($this->input->post('judul_kat') != NULL){

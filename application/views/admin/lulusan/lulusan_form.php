@@ -1,14 +1,14 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <?php
 $id 		= empty($lulusan) ? null : $lulusan->id_alumni;
-$nama 	= empty($lulusan) ? null : $lulusan->nama;
-$tempat_lahir		= empty($lulusan) ? null : $lulusan->tempat_lahir;
+$nama 		= empty($lulusan) ? null : $lulusan->nama;
+$tempat_lahir	= empty($lulusan) ? null : $lulusan->tempat_lahir;
 $tgl_lahir	= empty($lulusan) ? null : $lulusan->tgl_lahir;
-$email	= empty($email) ? null : $lulusan->email;
-$jkel	= empty($jkel) ? null : $lulusan->jenis_kelamin;
-$alamat	= empty($lulusan) ? null : $lulusan->alamat;
-$fakultasnya	= empty($fakultasnya) ? null : $lulusan->id_fakultas;
-$fotonya	= empty($fotonya) ? null : $lulusan->photo;
+$email		= empty($lulusan) ? null : $lulusan->email;
+$jkel		= empty($lulusan) ? null : $lulusan->jenis_kelamin;
+$alamat		= empty($lulusan) ? null : $lulusan->alamat;
+$fakultasnya= empty($lulusan) ? null : $lulusan->id_fakultas;
+$fotonya	= empty($lulusan) ? null : $lulusan->photo;
 ?>
 
 <form class="form-horizontal" action="" method="post" id="fform" enctype="multipart/form-data">
@@ -44,14 +44,15 @@ $fotonya	= empty($fotonya) ? null : $lulusan->photo;
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Jenis kelamin</label>									
 			<div class="col-sm-8">
-				<label for="laki">Laki-laki</label>&nbsp; <input type="radio" id="laki" name="jkel" value="1">&nbsp; &nbsp;
-				<label for="pere">Perempuan</label>&nbsp; <input type="radio" id="pere" name="jkel" value="2">
+				<label for="laki">Laki-laki</label>&nbsp; <input type="radio" id="laki" name="jkel" value="1" <?php if ($jkel==1) echo " checked";?>>&nbsp; &nbsp;
+				<label for="pere">Perempuan</label>&nbsp; <input type="radio" id="pere" name="jkel" value="2" <?php if ($jkel==2) echo " checked";?>>
 			</div>
 		</div>
 
 		<div class="form-group">
-			<label for="email" class="col-sm-2 control-label">Email</label>		<div class="col-sm-8">
-				<input class="form-control" type="email" id="email" name="email" value="<?php echo $email ?>" data-bv-trigger="blur" required>
+			<label for="email" class="col-sm-2 control-label">Email</label>		
+			<div class="col-sm-8">
+				<input class="form-control" type="email" id="email" name="email" value="<?php echo $email ?>" required />
 			</div>
 		</div>
 		
@@ -68,7 +69,10 @@ $fotonya	= empty($fotonya) ? null : $lulusan->photo;
 				<option>Pilih fakultas</option>
 				<?php
 				foreach($fakultas as $row) { 
-				echo "<option value=$row->kode_fakultasy>$row->nama_fakultasy</option>";
+				echo "<option value='$row->kode_fakultasy'";
+				if ($row->kode_fakultasy==$fakultasnya)
+					echo " selected";
+				echo ">$row->nama_fakultasy</option>";
 				}
 				?>
 				</select>
@@ -86,7 +90,7 @@ $fotonya	= empty($fotonya) ? null : $lulusan->photo;
 			<label for="inputEmail3" class="col-sm-2 control-label">Preview Foto</label>									
 			<div class="col-sm-8">
 				<?php if(!empty($fotonya)){?>
-					<img id="image-preview" style="width:250px;" src="<?php echo base_url();?>assets\images\info\<?=$fotonya?>" class="user-image" alt="image preview">
+					<img id="image-preview" style="width:250px;" src="<?php echo base_url();?>assets\images\alumni\<?=$fotonya?>" class="user-image" alt="image preview">
 				<?php }else{ ?>
 					<img id="image-preview" src="<?php echo base_url();?>assets\images\no_image.jpg" style="width:250px;" alt="image preview" />
 				<?php } ?>
