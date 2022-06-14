@@ -4,7 +4,11 @@ $id 		= empty($lulusan) ? null : $lulusan->id_alumni;
 $nama 	= empty($lulusan) ? null : $lulusan->nama;
 $tempat_lahir		= empty($lulusan) ? null : $lulusan->tempat_lahir;
 $tgl_lahir	= empty($lulusan) ? null : $lulusan->tgl_lahir;
+$email	= empty($email) ? null : $lulusan->email;
+$jkel	= empty($jkel) ? null : $lulusan->jenis_kelamin;
 $alamat	= empty($lulusan) ? null : $lulusan->alamat;
+$fakultasnya	= empty($fakultasnya) ? null : $lulusan->id_fakultas;
+$fotonya	= empty($fotonya) ? null : $lulusan->photo;
 ?>
 
 <form class="form-horizontal" action="" method="post" id="fform" enctype="multipart/form-data">
@@ -23,25 +27,58 @@ $alamat	= empty($lulusan) ? null : $lulusan->alamat;
 			</div>
 		</div>			
 		
-		
 		<div class="form-group">
-			<label for="tmplahir" class="col-sm-2 control-label">Tempat Lahir</label>									
+			<label for="tmplhr" class="col-sm-2 control-label">Tempat Lahir</label>									
 			<div class="col-sm-8">
-				<input class="form-control" type="text" id="tmplahir" name="tempat_lahir" value="<?php echo $tempat_lahir ?>" data-bv-trigger="blur" required>
+				<input class="form-control" type="text" id="tmplhr" name="tempat_lahir" value="<?php echo $tempat_lahir ?>" data-bv-trigger="blur" required>
 			</div>
 		</div>
 		
 		<div class="form-group">
-			<label for="tgl" class="col-sm-2 control-label">Tanggal</label>									
+			<label for="tgllhr" class="col-sm-2 control-label">Tanggal Lahir</label>									
 			<div class="col-sm-8">
-				<input class="form-control" type="date" id="tgl" name="tgl_lahir" value="<?php echo $tgl_lahir ?>" data-bv-trigger="blur" required>
+				<input class="form-control" type="date" id="tgllhr" name="tgl_lahir" value="<?php echo $tgl_lahir ?>" data-bv-trigger="blur" required>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Jenis kelamin</label>									
+			<div class="col-sm-8">
+				<label for="laki">Laki-laki</label>&nbsp; <input type="radio" id="laki" name="jkel" value="1">&nbsp; &nbsp;
+				<label for="pere">Perempuan</label>&nbsp; <input type="radio" id="pere" name="jkel" value="2">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="email" class="col-sm-2 control-label">Email</label>		<div class="col-sm-8">
+				<input class="form-control" type="email" id="email" name="email" value="<?php echo $email ?>" data-bv-trigger="blur" required>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="alamat" class="col-sm-2 control-label">Alamat</label>		<div class="col-sm-8">
+				<textarea class="form-control" id="alamat" name="alamat"><?php echo $alamat ?></textarea>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="fakultas" class="col-sm-2 control-label">Fakultas</label>		
+			<div class="col-sm-8">
+				<select class="form-control" id="fakultas" name="fakultas">
+				<option>Pilih fakultas</option>
+				<?php
+				foreach($fakultas as $row) { 
+				echo "<option value=$row->kode_fakultasy>$row->nama_fakultasy</option>";
+				}
+				?>
+				</select>
 			</div>
 		</div>
 		
 		<div class="form-group">
 			<label for="fotonya" class="col-sm-2 control-label">Foto</label>									
 			<div class="col-sm-8">
-				<input class="form-control" type="file" id="fotonya" name="photo" value="<?php echo $fotonya ?>" data-bv-trigger="blur" id="image-source" onchange="previewImage();">
+				<input class="form-control" type="file" id="fotonya" name="fotoalumni" value="<?php echo $fotonya ?>" data-bv-trigger="blur" id="image-source" onchange="previewImage();">
 			</div>
 		</div>
 		
@@ -61,7 +98,7 @@ $alamat	= empty($lulusan) ? null : $lulusan->alamat;
 		<div class="form-group">
 			<div class="col-sm-8">
         		<button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-hdd"></i> Simpan</button>
-        		<a href="<?php echo site_url('admin/berita/');?>" class="btn btn-warning"><i class="glyphicon glyphicon-minus-sign"></i> Kembali</a>
+        		<a href="<?php echo site_url('admin/lulusan/');?>" class="btn btn-warning"><i class="glyphicon glyphicon-minus-sign"></i> Kembali</a>
 			</div>
 		</div>
 								
@@ -131,4 +168,3 @@ $(document).ready(function() {  // Generate a simple captcha
     $("#richtext").wysihtml5();
   });
 </script>
-

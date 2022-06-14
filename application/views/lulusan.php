@@ -11,6 +11,7 @@
 	<table class="table table-bordered table-striped" id="example">
 	<tr>
 		<th>No.</th><th>Nama</th><th>Tempat,tgl. Lahir</th><th>Alamat</th>
+		<th>Nama Fakultas</th>
 	</tr>
 
 		<div class="box-body">
@@ -20,6 +21,7 @@
 					<td><?php echo $row->nama;?></td>
 					<td><?php echo $row->tempat_lahir.", ".tgl_indo($row->tgl_lahir);?></td>
 					<td><?php echo $row->alamat;?></td>
+					<td><?php echo $row->nama_fakultasy;?></td>
 				</tr>
 				<?php $nomor++; endforeach;  ?>
 	</table>

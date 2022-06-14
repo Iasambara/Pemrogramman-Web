@@ -25,51 +25,64 @@ class lulusan extends ci_controller{
 	}
 	
 	function add_lulusan(){
-		if($this->input->post('nama')){
-		    $waktu = date("Y-m-d H:i:s");
-		    $posisi = strpos($this->input->post('judul_kat')," ");
-		    if (!$posisi)  
-		        $namafilefoto = $this->input->post('judul_kat');
-		    else 
-		        $namafilefoto = substr($this->input->post('judul_kat'),0,$posisi);
-		    $akhiran_nama = date("dHis");
-			$config['upload_path'] = './assets/images/info/';
+		if($this->input->post('nama')){ // sudah terkirim / tbl simpan sdh diklik
+		    $nama = $this->input->post('nama');
+		    $tmplahir = $this->input->post('tempat_lahir');
+		    $tgllahir = $this->input->post('tgl_lahir');
+		    $jkel = $this->input->post('jkel');
+		    $email = $this->input->post('email');
+		    $alamat = $this->input->post('alamat');
+		    $fakultas = $this->input->post('fakultas');
+		    $akhiran_nama = date("dHi");
+		    $namafilefoto = substr($this->input->post('nama'),0,3); // gunakan 3 huruf pertama nama sbagai nama file foto
+			$config['upload_path'] = './assets/images/alumni/';
 			$config['allowed_types'] = 'jpg|png|jpeg';
 			$config['max_size'] = '2048000';
 			$config['file_name'] = $namafilefoto."_".$akhiran_nama;
-			$this->upload->initialize($config);
-			if(!$this->upload->do_upload('foto_kat')){
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('fotoalumni')){
 				$message='Tidak Berhasil : '.$this->upload->display_errors();
 				$this->session->set_flashdata('alert', $message);
     			$data=array(
-					'nama_kat' => "berita",
-					'judul_kat' => $this->input->post('judul_kat'),
-					'ket_kat' => $this->input->post('isi_kat'),
-					'tgl_kat' => $waktu,
+					'nama' => $nama,
+					'tempat_lahir' => $tmplahir,
+					'tgl_lahir' => $tgllahir,
+					'jenis_kelamin' => $jkel,
+					'email' => $email,
+					'alamat' => $alamat,
+					'id_fakultas' => $fakultas,
 				);
-//				redirect('admin/berita');
+//			echo "Tesgagal";
 			}
 			else {
-				$file=$this->upload->data('foto_kat');
-				$foto = $file['file_name'];
+
+			    $foto = $this->upload->data('file_name'); 
     			$data=array(
-					'nama_kat' => "berita",
-					'judul_kat' => $this->input->post('judul_kat'),
-					'ket_kat' => $this->input->post('isi_kat'),
-					'tgl_kat' => $waktu,
-					'foto_kat' => $foto,
+					'nama' => $nama,
+					'tempat_lahir' => $tmplahir,
+					'tgl_lahir' => $tgllahir,
+					'jenis_kelamin' => $jkel,
+					'email' => $email,
+					'alamat' => $alamat,
+					'id_fakultas' => $fakultas,
+					'photo' => $foto,
 				);
+		
+//			echo "Teslolos";
 			}
-			$hasil=$this->db->insert('tbl_kat',$data);
+			$hasil=$this->db->insert('alumni_biodata',$data);
 			$this->session->set_flashdata('alert', "Data berhasil ditambahkan.");
-			redirect('admin/berita');
+			redirect('admin/lulusan');
+
 		}  
-		else{
+		else{ // menampilkan form tambah data
 			$data['title'] = 'Tambah Data Alumni';
 			$data['file']='admin/lulusan/lulusan_form';
+			$data['fakultas']=$this->db->query("select * from alumni_fakultas order by nama_fakultasy")->result();
 			$this->load->view('admin/main',$data);
 		}
 	}
+	
 
 	function edit_berita($id){
 		if($this->input->post('judul_kat') != NULL){
