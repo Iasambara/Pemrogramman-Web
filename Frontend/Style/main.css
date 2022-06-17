@@ -47,17 +47,18 @@ header p {
 }
 
 header h1 {
-  font-family: "Playfair Display", serif;
+  font-family: 'Sora', sans-serif;
   font-weight: bold;
 }
 
 header .btn-get-started {
-  background-color: #ff9e53;
-  color: #fff;
+  background-color: white;
+  color: #3A887B;
 }
 
 header .btn-get-started:hover {
-  color: #fff;
+  background-color: #3A887B;
+  color: white;
 }
 
 .header-kekanan {
@@ -71,16 +72,21 @@ header .btn-get-started:hover {
 }
 
 .section-stats {
+  color: #3A887B;
   font-size: 18px;
   margin-top: -50px;
 }
 
 .section-stats .stats-detail-1 {
+  padding-top: 15px;
+  padding-left: 65px;
   border-radius: 45px 0px 0px 45px;
   background: #fff;
 }
 
 .section-stats .stats-detail-4 {
+  padding-left: 40px;
+  padding-top: 15px;
   border-radius: 0px 45px 45px 0px;
   background: #fff;
 }
@@ -88,17 +94,21 @@ header .btn-get-started:hover {
 .section-stats .stats-detail {
   padding-top: 15px;
   background: #fff;
-  padding-left: 40px;
+  padding-left: 65px;
 }
 
 .section-stats h2 {
   font-size: 30px;
+  color: #3A887B;
+  font-family: 'Sora', sans-serif;
+  font-weight: bold;
   margin-bottom: 0;
 }
 
 .section-stats p {
   font-size: 20px;
-  font-weight: lighter;
+  color: #3A887B;
+  font-weight: 300px;
 }
 
 .section-popular {
@@ -142,15 +152,19 @@ header .btn-get-started:hover {
 }
 
 .section-popular-content .section-popular-travel .card-travel .travel-button .btn-travel-details {
-  background-color: #ff9e53;
+  background-color: #1E6C5B;
   color: #fff;
 }
 
 .section-popular-content .section-popular-travel .card-travel .travel-button .btn-travel-details:hover {
-  color: #fff;
+  border-radius: 5px;
+  background: #1E6C5B;
+  -webkit-box-shadow: -5px -5px 8px #0c2b24, 5px 5px 8px #30ad92;
+          box-shadow: -5px -5px 8px #0c2b24, 5px 5px 8px #30ad92;
 }
 
 .section-networks {
+  color: #3A887B;
   background-color: #fff;
   margin-top: -170px;
   padding-top: 240px;
@@ -158,7 +172,7 @@ header .btn-get-started:hover {
 }
 
 .section-networks h2 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-weight: bold;
 }
 
@@ -167,6 +181,7 @@ header .btn-get-started:hover {
 }
 
 .section-testimonials-heading {
+  color: #3A887B;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f7f9ff));
   background: linear-gradient(#fff 0%, #f7f9ff 100%);
   padding-top: 50px;
@@ -174,7 +189,7 @@ header .btn-get-started:hover {
 }
 
 .section-testimonials-heading h2 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-weight: bold;
 }
 
@@ -184,6 +199,7 @@ header .btn-get-started:hover {
 }
 
 .section-testimonials-content .card-testimonial {
+  color: #0c2b24;
   padding: 40px 20px 10px;
   border-radius: 11px;
   margin-bottom: 20px;
@@ -216,12 +232,15 @@ header .btn-get-started:hover {
 }
 
 .section-testimonials-content .btn-get-started {
-  background-color: #ff9e53;
+  background-color: #1E6C5B;
   color: #fff;
 }
 
 .section-testimonials-content .btn-get-started:hover {
-  color: #fff;
+  border-radius: 5px;
+  background: #1E6C5B;
+  -webkit-box-shadow: -5px -5px 8px #0c2b24, 5px 5px 8px #30ad92;
+          box-shadow: -5px -5px 8px #0c2b24, 5px 5px 8px #30ad92;
 }
 
 .section-testimonials-content .btn-need-help {
@@ -233,182 +252,19 @@ header .btn-get-started:hover {
   color: #c3c3c3;
 }
 
+.section-footer {
+  height: 250px;
+  background-color: #1E6C5B;
+}
+
 .section-footer a {
-  color: #071c4d;
+  color: #f7f9ff;
 }
 
 .section-details-header {
-  min-height: 310px;
-  background: #e4e6eb;
-  margin-top: -68px;
-}
-
-.section-details-content {
-  margin-top: -210px;
-  min-height: 100vh;
-}
-
-.section-details-content .breadcrumb {
-  background-color: transparent;
-  padding: 0;
-  margin-bottom: 30px;
-}
-
-.section-details-content .breadcrumb-item.active {
-  font-weight: bold;
-  color: #071c4d;
-}
-
-.section-details-content .card-details {
-  padding: 30px;
-  border-radius: 11px;
-}
-
-.section-details-content .card-details h1 {
-  font-size: 26px;
-}
-
-.section-details-content .card-details h2 {
-  font-size: 20px;
-}
-
-.section-details-content .card-details h3 {
-  font-weight: 300;
-  font-size: 14px;
-  color: #071c4d;
-}
-
-.section-details-content .card-details p {
-  font-size: 18px;
-  color: #b1b1b1;
-}
-
-.section-details-content .card-details .trip-informations th {
-  font-weight: 300;
-  font-size: 18px;
-  color: #071c4d;
-}
-
-.section-details-content .card-details .trip-informations td {
-  font-weight: 300;
-  font-size: 18px;
-  color: #b1b1b1;
-}
-
-.section-details-content .card-details .trip-informations .text-blue {
-  color: #071c4d;
-  font-weight: bold;
-}
-
-.section-details-content .card-details .trip-informations .text-orange {
-  color: #ff9e53;
-  font-weight: bold;
-}
-
-.section-details-content .card-details .payment-instructions {
-  font-weight: 300;
-  font-size: 14px;
-  color: #b1b1b1;
-}
-
-.section-details-content .card-details .bank .bank-item h3 {
-  font-size: 18px;
-  color: #071c4d;
-  margin-bottom: 0;
-}
-
-.section-details-content .card-details .bank .bank-item p {
-  margin-bottom: 0;
-}
-
-.section-details-content .card-details .bank .bank-item .description {
-  margin-left: 10px;
-  overflow: hidden;
-  float: left;
-}
-
-.section-details-content .card-details .bank .bank-item .description p {
-  font-weight: normal;
-  font-size: 16px;
-  color: #071c4d;
-}
-
-.section-details-content .card-details .bank .bank-image {
-  width: 45px;
-  height: 45px;
-  float: left;
-}
-
-.section-details-content .card-details .disclaimer {
-  font-weight: 300;
-  font-size: 14px;
-  color: #b1b1b1;
-}
-
-.section-details-content .card-details .gj-datepicker .datepicker {
-  border-right: 0;
-}
-
-.section-details-content .card-details .gj-datepicker .input-group-append .btn {
-  padding-right: 30px;
-}
-
-.section-details-content .card-details .btn-add-now {
-  background-color: #071c4d;
-  color: #fff;
-}
-
-.section-details-content .card-details .btn-add-now:hover {
-  background-color: #1b3b86;
-  color: #fff;
-}
-
-.section-details-content .card-right {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.section-details-content .gallery .xzoom-container {
-  display: block;
-}
-
-.section-details-content .gallery .xzoom-container .xzoom {
-  width: 100%;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  margin-bottom: 10px;
-}
-
-.section-details-content .gallery .xzoom-container .xactive {
-  border: 2px solid #1abc9c;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.section-details-content .features {
-  margin-top: 20px;
-}
-
-.section-details-content .features h3 {
-  font-size: 18px;
-  color: #071c4d;
-  margin-bottom: 0;
-}
-
-.section-details-content .features p {
-  margin-bottom: 0;
-}
-
-.section-details-content .features .description {
-  margin-left: 10px;
-  overflow: hidden;
-  float: left;
-}
-
-.section-details-content .features .features-image {
-  width: 45px;
-  height: 45px;
-  float: left;
+  min-height: 0px;
+  background: #3A887B;
+  margin-top: -800px;
 }
 
 .members .member-image {
@@ -456,5 +312,34 @@ header .btn-get-started:hover {
 .section-success .btn-home-page:hover {
   background-color: #566ea7;
   color: #fff;
+}
+
+.footers {
+  color: white;
+  font-family: 'Sora', sans-serif;
+}
+
+.container-fluid {
+  height: 75px;
+  color: white;
+  margin-top: -25px;
+  background: #1E6C5B;
+}
+
+.section-details-content {
+  margin-top: -210px;
+  min-height: 100vh;
+}
+
+.section-details-content .breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  color: #0c2b24;
+  margin-bottom: -30px;
+}
+
+.section-details-content .breadcrumb-item.active {
+  font-weight: bold;
+  color: #0c2b24;
 }
 /*# sourceMappingURL=main.css.map */

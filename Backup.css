@@ -243,7 +243,159 @@ header {
 .section-details-header {
     min-height: 0px;
     background: #3A887B;
-    margin-top: -800px;
+    margin-top: -70px;
+}
+
+.section-details-content {
+    margin-top: -50px;
+    min-height: 100vh;
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 700px;
+    }
+    .breadcrumb-item {
+        &.active {
+            font-weight: bold;
+            color: #0c2b24;
+        }
+    }
+    .card-details {
+        padding: 30px;
+        border-radius: 11px;
+        h1 {
+            font-size: 26px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-weight: 300;
+            font-size: 14px;
+            color: #0c2b24;
+            ;
+        }
+        p {
+            font-size: 18px;
+            color: #b1b1b1;
+        }
+        .trip-informations {
+            th {
+                font-weight: 300;
+                font-size: 18px;
+                color: #0c2b24;
+                ;
+            }
+            td {
+                font-weight: 300;
+                font-size: 18px;
+                color: #b1b1b1;
+            }
+            .text-blue {
+                color: #0c2b24;
+                ;
+                font-weight: bold;
+            }
+            .text-orange {
+                color: #ff9e53;
+                font-weight: bold;
+            }
+        }
+        .payment-instructions {
+            font-weight: 300;
+            font-size: 14px;
+            color: #b1b1b1;
+        }
+        .bank {
+            .bank-item {
+                h3 {
+                    font-size: 18px;
+                    color: #071c4d;
+                    margin-bottom: 0;
+                }
+                p {
+                    margin-bottom: 0;
+                }
+                .description {
+                    margin-left: 10px;
+                    overflow: hidden;
+                    float: left;
+                    p {
+                        font-weight: normal;
+                        font-size: 16px;
+                        color: #071c4d;
+                    }
+                }
+            }
+            .bank-image {
+                width: 45px;
+                height: 45px;
+                float: left;
+            }
+        }
+        .disclaimer {
+            font-weight: 300;
+            font-size: 14px;
+            color: #b1b1b1;
+        }
+        .gj-datepicker {
+            .datepicker {
+                border-right: 0;
+            }
+            .input-group-append {
+                .btn {
+                    padding-right: 30px;
+                }
+            }
+        }
+        .btn-add-now {
+            background-color: #071c4d;
+            color: #fff;
+            &:hover {
+                background-color: #1b3b86;
+                color: #fff;
+            }
+        }
+    }
+    .card-right {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .gallery {
+        .xzoom-container {
+            display: block;
+            .xzoom {
+                width: 100%;
+                box-shadow: none;
+                margin-bottom: 10px;
+            }
+            .xactive {
+                border: 2px solid #1abc9c;
+                box-shadow: none;
+            }
+        }
+    }
+    .features {
+        margin-top: 20px;
+        h3 {
+            font-size: 18px;
+            color: #071c4d;
+            margin-bottom: 0;
+        }
+        p {
+            margin-bottom: 0;
+        }
+        .description {
+            margin-left: 10px;
+            overflow: hidden;
+            float: left;
+        }
+        .features-image {
+            width: 45px;
+            height: 45px;
+            float: left;
+        }
+    }
 }
 
 .members {
@@ -303,19 +455,3 @@ header {
 }
 
 //  HALAMAN DETAILS
-.section-details-content {
-    margin-top: -210px;
-    min-height: 100vh;
-    .breadcrumb {
-        background-color: transparent;
-        padding: 0;
-        color: #0c2b24;
-        margin-bottom: -30px;
-    }
-    .breadcrumb-item {
-        &.active {
-            font-weight: bold;
-            color: #0c2b24;
-        }
-    }
-}
