@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
-  color: #071c4d;
+  color: #3A887B;
 }
 
 .navbar-brand img {
@@ -261,12 +261,6 @@ header .btn-get-started:hover {
   color: #f7f9ff;
 }
 
-.section-details-header {
-  min-height: 0px;
-  background: #3A887B;
-  margin-top: -800px;
-}
-
 .members .member-image {
   width: 40px;
   height: 40px;
@@ -277,7 +271,7 @@ header .btn-get-started:hover {
 }
 
 .btn-join-now {
-  background-color: #ff9e53;
+  background-color: #0c2b24;
   color: #fff;
   border-radius: 0;
 }
@@ -326,6 +320,17 @@ header .btn-get-started:hover {
   background: #1E6C5B;
 }
 
+.navbar-details {
+  color: #0c2b24;
+  background-color: #1E6C5B;
+}
+
+.section-details-header {
+  min-height: 310px;
+  background: #1E6C5B;
+  margin-top: -68px;
+}
+
 .section-details-content {
   margin-top: -210px;
   min-height: 100vh;
@@ -334,12 +339,178 @@ header .btn-get-started:hover {
 .section-details-content .breadcrumb {
   background-color: transparent;
   padding: 0;
-  color: #0c2b24;
-  margin-bottom: -30px;
+  margin-bottom: 30px;
+}
+
+.section-details-content .breadcrumb-item h1 {
+  color: white;
+  font-size: 20px;
 }
 
 .section-details-content .breadcrumb-item.active {
   font-weight: bold;
+  color: white;
+}
+
+.section-details-content .card-details {
+  padding: 30px;
+  border-radius: 11px;
+}
+
+.section-details-content .card-details h1 {
   color: #0c2b24;
+  font-family: 'Sora', sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.section-details-content .card-details h2 {
+  font-size: 20px;
+}
+
+.section-details-content .card-details h3 {
+  font-weight: 300;
+  font-size: 14px;
+  color: white;
+}
+
+.section-details-content .card-details p {
+  font-size: 18px;
+  color: #b1b1b1;
+}
+
+.section-details-content .card-details .trip-informations th {
+  font-weight: 300;
+  font-size: 18px;
+  color: #0c2b24;
+}
+
+.section-details-content .card-details .trip-informations td {
+  font-weight: 300;
+  font-size: 18px;
+  color: #b1b1b1;
+}
+
+.section-details-content .card-details .trip-informations .text-blue {
+  color: white;
+  font-weight: bold;
+}
+
+.section-details-content .card-details .trip-informations .text-orange {
+  color: #ff9e53;
+  font-weight: bold;
+}
+
+.section-details-content .card-details .payment-instructions {
+  font-weight: 300;
+  font-size: 14px;
+  color: #b1b1b1;
+}
+
+.section-details-content .card-details .bank .bank-item h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 0;
+}
+
+.section-details-content .card-details .bank .bank-item p {
+  margin-bottom: 0;
+}
+
+.section-details-content .card-details .bank .bank-item .description {
+  margin-left: 10px;
+  overflow: hidden;
+  float: left;
+}
+
+.section-details-content .card-details .bank .bank-item .description p {
+  font-weight: normal;
+  font-size: 16px;
+  color: #071c4d;
+}
+
+.section-details-content .card-details .bank .bank-image {
+  width: 45px;
+  height: 45px;
+  float: left;
+}
+
+.section-details-content .card-details .disclaimer {
+  font-weight: 300;
+  font-size: 14px;
+  color: #b1b1b1;
+}
+
+.section-details-content .card-details .gj-datepicker .datepicker {
+  border-right: 0;
+}
+
+.section-details-content .card-details .gj-datepicker .input-group-append .btn {
+  padding-right: 30px;
+}
+
+.section-details-content .card-details .btn-add-now {
+  background-color: #071c4d;
+  color: #fff;
+}
+
+.section-details-content .card-details .btn-add-now:hover {
+  background-color: #1b3b86;
+  color: #fff;
+}
+
+.section-details-content .card-right {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.section-details-content .gallery .xzoom-container {
+  display: block;
+}
+
+.section-details-content .gallery .xzoom-container .xzoom {
+  width: 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-bottom: 10px;
+}
+
+.section-details-content .gallery .xzoom-container .xactive {
+  border: 2px solid #1abc9c;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.section-details-content .features {
+  margin-top: 20px;
+}
+
+.section-details-content .features h3 {
+  font-size: 18px;
+  color: #071c4d;
+  margin-bottom: 0;
+}
+
+.section-details-content .features p {
+  margin-bottom: 0;
+}
+
+.section-details-content .features .description {
+  margin-left: 10px;
+  overflow: hidden;
+  float: left;
+}
+
+.section-details-content .features .features-image {
+  width: 45px;
+  height: 45px;
+  float: left;
+}
+
+.background-belakang {
+  background-image: url(../Images/element1.png);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
 }
 /*# sourceMappingURL=main.css.map */
