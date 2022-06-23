@@ -4,7 +4,9 @@ body {
     color: #071c4d;
 }
 
-// Navbar
+
+/* Navbar */
+
 .navbar-brand {
     img {
         max-height: 40px;

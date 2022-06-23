@@ -266,6 +266,10 @@ header .btn-get-started:hover {
   height: 40px;
 }
 
+.member .h3 {
+  color: #0c2b24;
+}
+
 .join-container {
   margin-top: -16px;
 }
@@ -286,26 +290,36 @@ header .btn-get-started:hover {
 }
 
 .section-success h1 {
-  font-weight: 600;
-  font-style: 26px;
-  color: #071c4d;
+  margin-top: 45px;
+  font-family: 'Sora', sans-serif;
+  font-weight: bold;
+  font-style: 56px;
+  color: #0c2b24;
 }
 
 .section-success p {
-  font-weight: 300;
+  font-weight: 500px;
   font-size: 18px;
-  color: #b1b1b1;
+  color: #1E6C5B;
 }
 
 .section-success .btn-home-page {
   border-radius: 4px;
-  background-color: #071c4d;
-  color: #fff;
+  background-color: #3A887B;
+  color: white;
 }
 
 .section-success .btn-home-page:hover {
-  background-color: #566ea7;
-  color: #fff;
+  background-color: #1E6C5B;
+  color: white;
+}
+
+.text-succes .h1 {
+  font-size: 45px;
+}
+
+.text-succes .p {
+  color: #0c2b24;
 }
 
 .footers {
@@ -318,6 +332,12 @@ header .btn-get-started:hover {
   color: white;
   margin-top: -25px;
   background: #1E6C5B;
+}
+
+.Bintang {
+  padding-top: -250px;
+  margin-top: -250px;
+  width: 250px;
 }
 
 .navbar-details {
@@ -376,7 +396,7 @@ header .btn-get-started:hover {
 
 .section-details-content .card-details p {
   font-size: 18px;
-  color: #b1b1b1;
+  color: #575757;
 }
 
 .section-details-content .card-details .trip-informations th {
@@ -409,7 +429,8 @@ header .btn-get-started:hover {
 
 .section-details-content .card-details .bank .bank-item h3 {
   font-size: 18px;
-  color: white;
+  font-weight: 400;
+  color: #0c2b24;
   margin-bottom: 0;
 }
 
@@ -450,12 +471,12 @@ header .btn-get-started:hover {
 }
 
 .section-details-content .card-details .btn-add-now {
-  background-color: #071c4d;
+  background-color: #0c2b24;
   color: #fff;
 }
 
 .section-details-content .card-details .btn-add-now:hover {
-  background-color: #1b3b86;
+  background-color: #1E6C5B;
   color: #fff;
 }
 
@@ -512,5 +533,36 @@ header .btn-get-started:hover {
   background-repeat: no-repeat;
   width: 75px;
   height: 75px;
+}
+
+.text-atas {
+  color: white;
+}
+
+.checkout-btn {
+  color: #0c2b24;
+}
+
+.navbar-succes {
+  color: #0c2b24;
+  background-color: #1E6C5B;
+}
+
+.navbar-warna {
+  color: white;
+}
+
+.main-bg {
+  height: 500x;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 5px;
+  border-radius: 25px;
+  background-color: white;
+}
+
+.bg-succes {
+  height: 750px;
+  background-color: #1E6C5B;
 }
 /*# sourceMappingURL=main.css.map */

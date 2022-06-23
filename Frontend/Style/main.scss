@@ -247,6 +247,12 @@ header {
     }
 }
 
+.member {
+    .h3 {
+        color: #0c2b24;
+    }
+}
+
 .join-container {
     margin-top: -16px;
 }
@@ -264,23 +270,34 @@ header {
 .section-success {
     height: 90vh;
     h1 {
-        font-weight: 600;
-        font-style: 26px;
-        color: #071c4d;
+        margin-top: 45px;
+        font-family: 'Sora', sans-serif;
+        font-weight: bold;
+        font-style: 56px;
+        color: #0c2b24;
     }
     p {
-        font-weight: 300;
+        font-weight: 500px;
         font-size: 18px;
-        color: #b1b1b1;
+        color: #1E6C5B;
     }
     .btn-home-page {
         border-radius: 4px;
-        background-color: #071c4d;
-        color: #fff;
+        background-color: #3A887B;
+        color: white;
         &:hover {
-            background-color: #566ea7;
-            color: #fff;
+            background-color: #1E6C5B;
+            color: white;
         }
+    }
+}
+
+.text-succes {
+    .h1 {
+        font-size: 45px;
+    }
+    .p {
+        color: #0c2b24;
     }
 }
 
@@ -294,6 +311,13 @@ header {
     color: white;
     margin-top: -25px;
     background: #1E6C5B;
+}
+
+//Element
+.Bintang {
+    padding-top: -250px;
+    margin-top: -250px;
+    width: 250px;
 }
 
 //  HALAMAN DETAILS
@@ -345,7 +369,7 @@ header {
         }
         p {
             font-size: 18px;
-            color: #b1b1b1;
+            color: #575757;
         }
         .trip-informations {
             th {
@@ -376,7 +400,8 @@ header {
             .bank-item {
                 h3 {
                     font-size: 18px;
-                    color: white;
+                    font-weight: 400;
+                    color: #0c2b24;
                     margin-bottom: 0;
                 }
                 p {
@@ -415,10 +440,10 @@ header {
             }
         }
         .btn-add-now {
-            background-color: #071c4d;
+            background-color: #0c2b24;
             color: #fff;
             &:hover {
-                background-color: #1b3b86;
+                background-color: #1E6C5B;
                 color: #fff;
             }
         }
@@ -469,4 +494,36 @@ header {
     background-repeat: no-repeat;
     width: 75px;
     height: 75px;
+}
+
+//Checkout
+.text-atas {
+    color: white;
+}
+
+.checkout-btn {
+    color: #0c2b24;
+}
+
+.navbar-succes {
+    color: #0c2b24;
+    background-color: #1E6C5B;
+}
+
+.navbar-warna {
+    color: white;
+}
+
+.main-bg {
+    height: 500x;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 5px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+.bg-succes {
+    height: 750px;
+    background-color: #1E6C5B;
 }
