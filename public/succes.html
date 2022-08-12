@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Succes</title>
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="libraries/xzoom/xzoom.css" />
+    <link rel="stylesheet" href="libraries/gijgo/css/gijgo.min.css" />
+    <link rel="stylesheet" href="Style/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Assistant:200,400,700&&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="bg-succes">
+        <div class="container">
+            <nav class="row navbar navbar-expand-lg navbar-succes">
+                <div class="navbar-nav ml-auto mr-auto mr-sm-auto mr-lg-0 mr-md-auto">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="images/logoku 1.png" alt="">
+                    </a>
+                </div>
+                <ul class="navbar-nav mr-auto d-none d-lg-block navbar-warna">
+                    <li>
+                        <span>
+                       &nbsp; Please give yourself more credit <br>
+                    git  &nbsp; For the thing that you do
+                  </span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <main class="main-bg">
+            <div class="section-success d-flex align-items-center">
+                <div class="col text-center text-succes">
+                    <img src="images/Succesbg.png" alt="Success"> &nbsp; &nbsp;
+                    <h1>Pembayaran Berhasil!</h1>
+                    <p>Tiket akan segera di Kirimkan melalui Email yang terdaftar <br> Enjoy your quality time!</p>
+                    <a href="index.html" class="btn btn-home-page mt-3 px-3">
+                    Home Page
+                </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="libraries/retina/retina.js"></script>
+    <script src="libraries/jquery/jquery-3.4.1.min.js"></script>
+    <script src="libraries/bootstrap/js/bootstrap.js"></script>
+    <script src="libraries/xzoom/xzoom.min.js"></script>
+    <script src="libraries/gijgo/js/gijgo.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.xzoom, .xzoom-gallery').xzoom({
+                zoomWidth: 500,
+                title: false,
+                tint: '#333',
+                Xoffset: 15
+            });
+
+            $('.datepicker').datepicker({
+                uiLibrary: 'bootstrap4',
+                icons: {
+                    rightIcon: '<img src="images/ic_doe.png" />'
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
